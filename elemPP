@@ -1,0 +1,35 @@
+#include <fstream>
+#include <cmath>
+using namespace std;
+ifstream fin("elempp.in");
+ofstream fout("elempp.out");
+int patr(int k){
+    int r=sqrt(k);
+    if(r*r==k){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+int long long n, a, b, nr, x, nrin;
+int main()
+{
+    
+   fin>>n;
+   for(int i=1;i<=n;i++){
+       fin>>nr;
+       nrin=nr;
+       while(nr>=10){
+           b=nr%10;
+           a=(nr/10)%10;
+           nr=nr/10;
+       }
+       x=a*10+b;
+       if(patr(x)==true){
+           fout<<nrin<<" ";
+       }
+   }
+
+    return 0;
+}
